@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ImmatricolazioneService {
+  constructor(private firestore: AngularFirestore) {}
 
-  constructor() { }
+  salvaLista(immatricolazione: any): Promise<any> {
+    return this.firestore.collection('lista').add(immatricolazione);
+  }
 }

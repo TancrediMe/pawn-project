@@ -4,7 +4,7 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h3>IMMATRICOLA IL CARRELLO/RIMORCHIO</h3>
-                    
+
                     <form class="mt-4" [formGroup]="creaImmatricolazione">
                         <div class="row">
                             <div class="col-4">
@@ -28,6 +28,8 @@
                                     placeholder="TIPO">
                                 <input type="text" style="margin-top: 7px;" class="form-control"
                                     formControlName="TELAIO_N" placeholder="TELAIO N°">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="ID_PRATICA" placeholder="ID PRATICA">
                             </div>
                             <div class="col-4">
                                 <select class="form-select" (change)="onChange($event.target.value)">
@@ -37,11 +39,10 @@
                                     <option>ITC400B</option>
                                 </select>
                                 <button type="button" style="margin-top: 7px;"
-                                    class="btn btn-dark  align-items-center justify-content-center">DOWNLOAD
-                                    PDF</button>
+                                    class="btn btn-dark  align-items-center justify-content-center"
+                                    (click)="salvaLista()">CONFERMA</button>
                                 <button type="reset" style="margin-top: 7px;"
-                                    class="btn btn-dark  align-items-center justify-content-center"> RESETTA
-                                    CAMPI </button>
+                                    class="btn btn-dark  align-items-center justify-content-center">RESETTA</button>
                             </div>
                         </div>
                     </form>

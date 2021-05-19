@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
+import { ImmatricolazioneService } from 'src/app/services/immatricolazione.service';
 
 @Component({
   selector: 'app-nuova-immatricolazione',
@@ -10,12 +11,15 @@ import { map } from 'rxjs/operators';
 })
 export class NuovaImmatricolazioneComponent implements OnInit {
   creaImmatricolazione: FormGroup;
-  submit = false;
   formData: any[] = [];
   veicolo: any;
   temp: any;
 
-  constructor(private firestore: AngularFirestore, private fb: FormBuilder) {
+  constructor(
+    private firestore: AngularFirestore,
+    private fb: FormBuilder,
+    private _immatricolazioneService: ImmatricolazioneService
+  ) {
     this.creaImmatricolazione = this.fb.group({
       OMOLOGAZIONE_N: ['', Validators.required],
       DEL_DATA: ['', Validators.required],
@@ -98,5 +102,23 @@ export class NuovaImmatricolazioneComponent implements OnInit {
         //ANNO_DI_COSTRUZIONE: this.formData[event].ANNO_DI_COSTRUZIONE,
       });
     }
+  }
+  salvaLista() {
+    const immatricolazione: any = {
+      //ID_PRATICA: this.creaImmatricolazione.value.ID_PRATICA,
+      ID_PRATICA: '1',
+      TIPO: this.creaImmatricolazione.value.TIPO,
+      TELAIO_N: this.creaImmatricolazione.value.TELAIO_N,
+      ANNO_COSTRUZIONE: new Date().getFullYear(),
+    };
+    console.log('RIDAMMI', immatricolazione);
+    this._immatricolazioneService
+      .salvaLista(immatricolazione)
+      .then(() => {
+        console.log('Immatricolazione registrata con successo');
+      })
+      .catch((error) => {
+        console.log('ERRORE', error);
+      });
   }
 }
