@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Lista Immatricolazioni</span>
+            <a routerLink="/nuova-immatricolazione"><button class="btn btn-dark btn-lg" style="float: right" >Nuova</button></a>
+            <table class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>N.Telaio</th>
+                    <th>Tipologia</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>
+                      <i class="fas fa-trash fa-lg text-danger" style="margin-right: 15px;"></i>
+                      <i class="fas fa-file-pdf fa-lg"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

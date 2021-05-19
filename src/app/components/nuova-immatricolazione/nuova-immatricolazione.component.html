@@ -1,0 +1,94 @@
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>IMMATRICOLA IL CARRELLO/RIMORCHIO</h3>
+                    <form class="mt-4" [formGroup]="creaImmatricolazione">
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="text" class="form-control" formControlName="OMOLOGAZIONE_N"
+                                    placeholder="Omologazione N°">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="FABBRICA" placeholder="FABBRICA">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="VEICOLO" placeholder="VEICOLO">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="PORTATA_UTILE" placeholder="PORTATA UTILE KG.">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="CARROZZERIA" placeholder="CARROZZERIA">
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control" formControlName="DEL_DATA"
+                                    placeholder="Del (Data)">
+                                <input type="text" style="margin-top: 7px;" class="form-control" formControlName="SEDE"
+                                    placeholder="SEDE">
+                                <input type="text" style="margin-top: 7px;" class="form-control" formControlName="TIPO"
+                                    placeholder="TIPO">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="TELAIO_N" placeholder="TELAIO N°">
+                            </div>
+                            <div class="col-4">
+                                <select class="form-select" (change)="onChange($event.target.value)">
+                                    <option *ngFor=" let veicolo of veicolo">{{veicolo}}</option>
+                                    <option>SELEZIONA...</option>
+                                    <option>ITC300B</option>
+                                    <option>ITC400B</option>
+                                </select>
+                                <button type="button" style="margin-top: 7px;"
+                                    class="btn btn-dark  align-items-center justify-content-center">DOWNLOAD
+                                    PDF</button>
+                                <button type="reset" style="margin-top: 7px;"
+                                    class="btn btn-dark  align-items-center justify-content-center"> RESETTA
+                                    CAMPI </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>CERTIFICATO D'ORIGINE</h3>
+                    <h6>Si dichiara di avere costruito il veicolo con i dati sottoindicati:</h6>
+                    <form class="mt-4" [formGroup]="creaImmatricolazione">
+                        <div class="row">
+                            <div class="col-4">
+                                <input type="text" class="form-control" formControlName="OMOLOGAZIONE_N"
+                                    placeholder="Omologazione N°">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="LUNGHEZZA_MAX" placeholder="LUNGHEZZA MAX">
+                                <input type="text" style="margin-top: 7px;" class="form-control" formControlName="TARA"
+                                    placeholder="TARA KG.">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="N_ASSI" placeholder="N° ASSI">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="CARROZZERIA" placeholder="CARROZZERIA">
+                            </div>
+                            <div class="col-4">
+                                <input type="text" class="form-control" formControlName="TIPO"
+                                    placeholder="RIMORCHIO TIPO">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="LARGHEZZA_MAX" placeholder="LARGHEZZA MAX">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="PORTATA_UTILE" placeholder="PORTATA KG">
+                                <input type="text" style="margin-top: 7px;" class="form-control"
+                                    formControlName="PNEUMATICI" placeholder="PNEUMATICI">
+                                <input type="text" style="margin-top: 7px;" class="form-control" formControlName="PTT"
+                                    placeholder="PTT KG">
+                            </div>
+                            <div class="col-4">
+                                NON SO
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
