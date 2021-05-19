@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pawnproject-649cd": {
+      "hosting": {
+        "conformita": [
+          "pawnproject-649cd"
+        ]
+      }
+    }
+  }
+}
