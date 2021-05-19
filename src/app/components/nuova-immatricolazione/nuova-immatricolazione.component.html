@@ -10,12 +10,8 @@
                                 <input type="text" class="form-control" placeholder="NOME">
                             </div>
                             <div class="col">
-                                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
                                 <select class="form-select" id="inlineFormSelectPref">
-                                  <option selected>Seleziona il tipo...</option>
-                                  <option value="1">One</option>
-                                  <option value="2">Two</option>
-                                  <option value="3">Three</option>
+                                  <option *ngFor="let veicolo of veicolo| async">{{veicolo.TIPO | json}}</option>
                                 </select>
                             </div>
                         </div>

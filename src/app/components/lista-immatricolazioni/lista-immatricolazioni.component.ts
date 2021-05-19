@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-lista-immatricolazioni',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaImmatricolazioniComponent implements OnInit {
 
-  constructor() { }
+  constructor(firestore: AngularFirestore) { }
 
   ngOnInit(): void {
   }
