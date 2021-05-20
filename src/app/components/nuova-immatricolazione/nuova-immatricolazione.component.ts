@@ -37,6 +37,7 @@ export class NuovaImmatricolazioneComponent implements OnInit {
       PNEUMATICI: ['', Validators.required],
       PTT: ['', Validators.required],
       TARA: ['', Validators.required],
+      ID_PRATICA: [''],
       //ANNO_DI_COSTRUZIONE: ['', Validators.required],
     });
   }
@@ -81,6 +82,7 @@ export class NuovaImmatricolazioneComponent implements OnInit {
         PNEUMATICI: this.formData[event].PNEUMATICI,
         PTT: this.formData[event].PTT,
         TARA: this.formData[event].TARA,
+        ID_PRATICA: null,
         // ANNO_DI_COSTRUZIONE: this.formData[event].ANNO_DI_COSTRUZIONE,
       });
     } else {
@@ -100,32 +102,18 @@ export class NuovaImmatricolazioneComponent implements OnInit {
         PNEUMATICI: this.formData[event].PNEUMATICI,
         PTT: this.formData[event].PTT,
         TARA: this.formData[event].TARA,
+        ID_PRATICA: null,
+
         //ANNO_DI_COSTRUZIONE: this.formData[event].ANNO_DI_COSTRUZIONE,
       });
     }
   }
   salvaLista() {
+    console.log('FORM==', this.creaImmatricolazione.value);
+
     const immatricolazione: any = {
-      //ID_PRATICA: this.creaImmatricolazione.value.ID_PRATICA,
-      //ID_PRATICA: '1',
-      //ID_PRATICA: this.creaImmatricolazione.get('ID_PRATICA').value,
-      //ID_PRATICA: this.creaImmatricolazione.value.ID_PRATICA,
-      TIPO: this.creaImmatricolazione.value.TIPO,
-      TELAIO_N: this.creaImmatricolazione.value.TELAIO_N,
+      ...this.creaImmatricolazione.value,
       ANNO_COSTRUZIONE: new Date().getFullYear(),
-      OMOLOGAZIONE_N: this.creaImmatricolazione.value.OMOLOGAZIONE_N,
-      DEL_DATA: this.creaImmatricolazione.value.DEL_DATA,
-      FABBRICA: this.creaImmatricolazione.value.FABBRICA,
-      SEDE: this.creaImmatricolazione.value.SEDE,
-      VEICOLO: this.creaImmatricolazione.value.VEICOLO,
-      PORTATA_UTILE: this.creaImmatricolazione.value.PORTATA_UTILE,
-      CARROZZERIA: this.creaImmatricolazione.value.CARROZZERIA,
-      LUNGHEZZA_MAX: this.creaImmatricolazione.value.LUNGHEZZA_MAX,
-      LARGHEZZA_MAX: this.creaImmatricolazione.value.LARGHEZZA_MAX,
-      N_ASSI: this.creaImmatricolazione.value.N_ASSI,
-      PNEUMATICI: this.creaImmatricolazione.value.PNEUMATICI,
-      PTT: this.creaImmatricolazione.value.PTT,
-      TARA: this.creaImmatricolazione.value.TARA,
     };
     console.log('RIDAMMI', immatricolazione);
     this._immatricolazioneService
@@ -136,5 +124,6 @@ export class NuovaImmatricolazioneComponent implements OnInit {
       .catch((error) => {
         console.log('ERRORE', error);
       });
+    //this._immatricolazioneService.generaPdf(immatricolazione);
   }
 }
