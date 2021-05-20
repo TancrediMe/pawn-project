@@ -4,7 +4,9 @@
       <span class="h3">Lista Immatricolazioni</span>
       <a routerLink="/nuova-immatricolazione"><button class="btn btn-dark btn-lg"
           style="float: right">NUOVA</button></a>
-      <table class="table table-striped mt-5">
+      <h5 style="margin-top: 30px;" *ngIf="immatricolazione.length == 0">Non ci sono immatricolazioni presenti nel
+        sistema.</h5>
+      <table *ngIf="immatricolazione.length > 0" class="table table-striped mt-5">
         <thead>
           <tr>
             <th>ID</th>
