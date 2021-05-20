@@ -113,6 +113,19 @@ export class NuovaImmatricolazioneComponent implements OnInit {
       TIPO: this.creaImmatricolazione.value.TIPO,
       TELAIO_N: this.creaImmatricolazione.value.TELAIO_N,
       ANNO_COSTRUZIONE: new Date().getFullYear(),
+      OMOLOGAZIONE_N: this.creaImmatricolazione.value.OMOLOGAZIONE_N,
+      DEL_DATA: this.creaImmatricolazione.value.DEL_DATA,
+      FABBRICA: this.creaImmatricolazione.value.FABBRICA,
+      SEDE: this.creaImmatricolazione.value.SEDE,
+      VEICOLO: this.creaImmatricolazione.value.VEICOLO,
+      PORTATA_UTILE: this.creaImmatricolazione.value.PORTATA_UTILE,
+      CARROZZERIA: this.creaImmatricolazione.value.CARROZZERIA,
+      LUNGHEZZA_MAX: this.creaImmatricolazione.value.LUNGHEZZA_MAX,
+      LARGHEZZA_MAX: this.creaImmatricolazione.value.LARGHEZZA_MAX,
+      N_ASSI: this.creaImmatricolazione.value.N_ASSI,
+      PNEUMATICI: this.creaImmatricolazione.value.PNEUMATICI,
+      PTT: this.creaImmatricolazione.value.PTT,
+      TARA: this.creaImmatricolazione.value.TARA,
     };
     console.log('RIDAMMI', immatricolazione);
     this._immatricolazioneService
