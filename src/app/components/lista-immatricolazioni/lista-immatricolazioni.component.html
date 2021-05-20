@@ -11,7 +11,7 @@
             <th>N° TELAIO</th>
             <th>TIPOLOGIA</th>
             <th>ANNO DI COSTRUZIONE</th>
-            <th></th>
+            <th>FUNZIONI</th>
           </tr>
         </thead>
         <tbody>
@@ -21,7 +21,8 @@
             <td>{{immatricolazione.TIPO}}</td>
             <td>{{immatricolazione.ANNO_COSTRUZIONE}}</td>
             <td>
-              <i class="fas fa-trash fa-lg text-danger" style="margin-right: 15px;"></i>
+              <i class="fas fa-trash fa-lg text-danger" style="margin-right: 15px;"
+                (click)="deleteLista(immatricolazione.id)"></i>
               <i class="fas fa-file-pdf fa-lg"></i>
             </td>
           </tr>
