@@ -27,4 +27,15 @@ export class ListaImmatricolazioniComponent implements OnInit {
       console.log(this.immatricolazione);
     });
   }
+
+  deleteLista(id: string) {
+    this._immatricolazioneService
+      .deleteLista(id)
+      .then(() => {
+        console.log('Cancellazione avvenuta con successo');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 }

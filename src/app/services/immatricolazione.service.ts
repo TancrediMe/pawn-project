@@ -15,4 +15,8 @@ export class ImmatricolazioneService {
   getLista(): Observable<any> {
     return this.firestore.collection('lista').snapshotChanges();
   }
+
+  deleteLista(id: string): Promise <any>{
+    return this.firestore.collection('lista').doc(id).delete();
+  }
 }
