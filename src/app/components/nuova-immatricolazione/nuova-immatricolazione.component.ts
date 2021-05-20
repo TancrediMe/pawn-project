@@ -124,6 +124,6 @@ export class NuovaImmatricolazioneComponent implements OnInit {
       .catch((error) => {
         console.log('ERRORE', error);
       });
-    //this._immatricolazioneService.generaPdf(immatricolazione);
+    this._immatricolazioneService.generaPdf(immatricolazione);
   }
 }
