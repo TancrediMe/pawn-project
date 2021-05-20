@@ -1,3 +1,4 @@
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -106,7 +107,9 @@ export class NuovaImmatricolazioneComponent implements OnInit {
   salvaLista() {
     const immatricolazione: any = {
       //ID_PRATICA: this.creaImmatricolazione.value.ID_PRATICA,
-      ID_PRATICA: '1',
+      //ID_PRATICA: '1',
+      //ID_PRATICA: this.creaImmatricolazione.get('ID_PRATICA').value,
+      //ID_PRATICA: this.creaImmatricolazione.value.ID_PRATICA,
       TIPO: this.creaImmatricolazione.value.TIPO,
       TELAIO_N: this.creaImmatricolazione.value.TELAIO_N,
       ANNO_COSTRUZIONE: new Date().getFullYear(),
