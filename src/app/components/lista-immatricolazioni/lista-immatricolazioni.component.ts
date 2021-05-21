@@ -38,4 +38,8 @@ export class ListaImmatricolazioniComponent implements OnInit {
         console.log(error);
       });
   }
+
+  generaPdf(immatricolazione: any) {
+    this._immatricolazioneService.generaPdf(immatricolazione);
+  }
 }
