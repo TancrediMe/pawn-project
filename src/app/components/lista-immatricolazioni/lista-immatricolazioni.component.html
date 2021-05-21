@@ -11,7 +11,7 @@
           <tr>
             <th>ID</th>
             <th>N° TELAIO</th>
-            <th>TIPO</th>
+            <th>TIPOLOGIA</th>
             <th></th>
           </tr>
         </thead>
@@ -21,7 +21,7 @@
             <td>{{immatricolazione.TELAIO_N}}</td>
             <td>{{immatricolazione.TIPO}}</td>
             <td>
-              <i class="fas fa-trash fa-lg text-danger" style="margin-right: 10px;"
+              <i class="fas fa-trash fa-lg text-danger" style="margin-right: 15px;"
                 (click)="deleteLista(immatricolazione.id)"></i>
               <i class="fas fa-file-pdf fa-lg" (click)="generaPdf(immatricolazione)"></i>
             </td>

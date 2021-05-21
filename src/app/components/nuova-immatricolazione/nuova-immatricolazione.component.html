@@ -4,6 +4,7 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h3>IMMATRICOLA IL CARRELLO/RIMORCHIO</h3>
+
                     <form class="mt-4" [formGroup]="creaImmatricolazione">
                         <div class="row">
                             <div class="col-4">
@@ -31,14 +32,15 @@
                                     formControlName="ID_PRATICA" placeholder="ID PRATICA">
                             </div>
                             <div class="col-4">
-                                <select class="form-select" (change)="onChange($event.target.value)">
+                                <select class="form-select" (change)="onChange($event)">
+                                    <!-- <option *ngFor=" let veicolo of veicolo">{{veicolo}}</option> -->
                                     <option>SELEZIONA...</option>
                                     <option>ITC300B</option>
                                     <option>ITC400B</option>
                                 </select>
                                 <button type="button" style="margin-top: 7px;"
                                     class="btn btn-dark  align-items-center justify-content-center"
-                                    (click)="salvaLista()">GENERA</button>
+                                    (click)="salvaLista()">CREA</button>
                                 <button type="reset" style="margin-top: 7px;"
                                     class="btn btn-dark  align-items-center justify-content-center">RESETTA</button>
                             </div>

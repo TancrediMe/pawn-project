@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-
-//Componenti per PDF
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
 (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs;
 
 @Injectable({
@@ -14,7 +13,7 @@ export class ImmatricolazioneService {
   constructor(private firestore: AngularFirestore) {}
 
   generaPdf(immatricolazione: any) {
-    const docDefinition = {
+    const dd: TDocumentDefinitions = {
       content: [
         {
           text: 'OMOLOGAZIONE N°',
@@ -292,23 +291,8 @@ export class ImmatricolazioneService {
           fontSize: 12,
         },
       ],
-      styles: {
-        header: {
-          fontSize: 18,
-          bold: true,
-          alignment: 'right',
-          margin: [0, 190, 0, 80],
-        },
-        subheader: {
-          fontSize: 14,
-        },
-        superMargin: {
-          margin: [20, 0, 40, 0],
-          fontSize: 15,
-        },
-      },
     };
-    pdfMake.createPdf(docDefinition).open();
+    pdfMake.createPdf(dd).open();
   }
 
   salvaLista(immatricolazione: any): Promise<any> {

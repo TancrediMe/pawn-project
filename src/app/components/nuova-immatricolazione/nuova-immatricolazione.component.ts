@@ -1,7 +1,13 @@
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Event } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { ImmatricolazioneService } from 'src/app/services/immatricolazione.service';
 
@@ -15,7 +21,7 @@ export class NuovaImmatricolazioneComponent implements OnInit {
   formData: any[] = [];
   veicolo: any;
   temp: any;
-
+  selectValue = new FormControl();
   constructor(
     private firestore: AngularFirestore,
     private fb: FormBuilder,
@@ -38,17 +44,18 @@ export class NuovaImmatricolazioneComponent implements OnInit {
       PTT: ['', Validators.required],
       TARA: ['', Validators.required],
       ID_PRATICA: [''],
+      //ANNO_DI_COSTRUZIONE: ['', Validators.required],
     });
   }
   ngOnInit(): void {
-    /*  this.veicolo =  */ this.firestore
+    /*  this.veicolo =  */ /*  this.firestore
       .collection('veicolo')
       .doc('ITC300B')
       .valueChanges()
       .subscribe((val: any) => {
         console.log('VALUE===', val);
       });
-
+ */
     console.log('il nome è==', this.veicolo);
 
     this.temp = this.firestore
@@ -62,8 +69,9 @@ export class NuovaImmatricolazioneComponent implements OnInit {
       });
     });
   }
-
   onChange(event: any) {
+    event = event.target.value;
+
     if (event.toString() == Object.keys(this.formData)[0]) {
       this.creaImmatricolazione.setValue({
         OMOLOGAZIONE_N: this.formData[event].OMOLOGAZIONE_N,
@@ -82,6 +90,7 @@ export class NuovaImmatricolazioneComponent implements OnInit {
         PTT: this.formData[event].PTT,
         TARA: this.formData[event].TARA,
         ID_PRATICA: null,
+        // ANNO_DI_COSTRUZIONE: this.formData[event].ANNO_DI_COSTRUZIONE,
       });
     } else {
       this.creaImmatricolazione.setValue({
@@ -101,6 +110,8 @@ export class NuovaImmatricolazioneComponent implements OnInit {
         PTT: this.formData[event].PTT,
         TARA: this.formData[event].TARA,
         ID_PRATICA: null,
+
+        //ANNO_DI_COSTRUZIONE: this.formData[event].ANNO_DI_COSTRUZIONE,
       });
     }
   }
