@@ -4,7 +4,6 @@
             <div class="card text-center">
                 <div class="card-body">
                     <h3>IMMATRICOLA IL CARRELLO/RIMORCHIO</h3>
-
                     <form class="mt-4" [formGroup]="creaImmatricolazione">
                         <div class="row">
                             <div class="col-4">
@@ -33,7 +32,6 @@
                             </div>
                             <div class="col-4">
                                 <select class="form-select" (change)="onChange($event.target.value)">
-                                    <option *ngFor=" let veicolo of veicolo">{{veicolo}}</option>
                                     <option>SELEZIONA...</option>
                                     <option>ITC300B</option>
                                     <option>ITC400B</option>

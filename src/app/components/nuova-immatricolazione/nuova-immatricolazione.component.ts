@@ -38,7 +38,6 @@ export class NuovaImmatricolazioneComponent implements OnInit {
       PTT: ['', Validators.required],
       TARA: ['', Validators.required],
       ID_PRATICA: [''],
-      //ANNO_DI_COSTRUZIONE: ['', Validators.required],
     });
   }
   ngOnInit(): void {
@@ -83,7 +82,6 @@ export class NuovaImmatricolazioneComponent implements OnInit {
         PTT: this.formData[event].PTT,
         TARA: this.formData[event].TARA,
         ID_PRATICA: null,
-        // ANNO_DI_COSTRUZIONE: this.formData[event].ANNO_DI_COSTRUZIONE,
       });
     } else {
       this.creaImmatricolazione.setValue({
@@ -103,8 +101,6 @@ export class NuovaImmatricolazioneComponent implements OnInit {
         PTT: this.formData[event].PTT,
         TARA: this.formData[event].TARA,
         ID_PRATICA: null,
-
-        //ANNO_DI_COSTRUZIONE: this.formData[event].ANNO_DI_COSTRUZIONE,
       });
     }
   }
